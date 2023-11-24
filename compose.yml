@@ -1,0 +1,25 @@
+#docker compose for mysql container in windows
+version: '3.1'
+
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    ports:
+      - 3306:3306
+    volumes:
+      - C:\Users\Anmol\OneDrive\Documents\projects\mysql_data:/var/lib/mysql
+  
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+# Path: docker-compose.yml
+#docker compose for mysql container in windows
